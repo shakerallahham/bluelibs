@@ -191,13 +191,13 @@ type Mutation {
 
 ```ts
 import { IGraphQLContext, InputType } from "@bluelibs/graphql-bundle";
-import { RegisterInput, XAuthService } from "@bluelibs/x-auth-bundle";
+import { RegistrationInput, XAuthService } from "@bluelibs/x-auth-bundle";
 
-class MyCustomInput extends RegisterInput {
+class MyCustomInput extends RegistrationInput {
   age: string;
 }
 
-function register(_, args: InputType<RegisterInput>, context: IGraphQLContext) {
+function register(_, args: InputType<RegistrationInput>, context: IGraphQLContext) {
   const { input } = args;
   const xAuthService = context.container.get(XAuthService);
 
